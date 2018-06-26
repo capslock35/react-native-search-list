@@ -111,8 +111,8 @@ export default class SearchBar extends Component {
           this.props.style,
           {
             flexDirection: 'row',
-            padding: searchBarHorizontalPadding,
-            height: Theme.size.searchInputHeight,
+            padding: 0,
+            height: 0,
             backgroundColor: this.props.searchBarBackgroundColor
           },
           {
@@ -244,3 +244,4 @@ const styles = StyleSheet.create({
     height: 12
   }
 })
+
