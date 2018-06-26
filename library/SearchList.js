@@ -308,7 +308,10 @@ export default class SearchList extends Component {
 
   onFocus () {
     if (!this.state.isSearching) {
-      this.enterSearchState()
+      var context=this;
+      setTimeout(function(){
+        context.enterSearchState()
+      },100)
     }
     this.props.onSearchStart && this.props.onSearchStart()
   }
@@ -318,7 +321,10 @@ export default class SearchList extends Component {
   }
 
   onClickCancel () {
-    this.exitSearchState()
+    var context=this;
+    setTimeout(function(){
+      context.exitSearchState()
+    },100)
     this.props.onSearchEnd && this.props.onSearchEnd()
   }
 
@@ -391,7 +397,7 @@ export default class SearchList extends Component {
             onChange={this.search.bind(this)}
             onFocus={this.onFocus.bind(this)}
             onBlur={this.onBlur.bind(this)}
-
+            style={this.props.searchBarStyle}
             onClickCancel={this.onClickCancel.bind(this)}
             cancelTitle={this.props.cancelTitle}
             cancelTextColor={this.props.cancelTextColor}
